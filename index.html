@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Project popcorn</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- ==============NAVBAR============== -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Popcorn Project</a>
+
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="moviebank.html">My movie bank</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Log in</button>
+        </form>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <!-- ========TOP 25 MOVIES BY GENRE=========== -->
+      <div class="col-lg-7" id="top25">
+        <div class="header25">
+          <div class="dropdown">
+            <button class="dropbtn" id="dropbtnID">Genres</button>
+            <div class="dropdown-content">
+              <a href="#">Thriller</a>
+              <a href="#">Horror</a>
+              <a href="#">Drama</a>
+              <a href="#">Comedy</a>
+              <a href="#">Documentary</a>
+              <a href="#">Animation</a>
+              <a href="#">Sci-fi</a>
+              <a href="#">Romance</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- =========LAST FIVE MOVIES ADDED TO WATCH LIST========= -->
+      <div class="col-lg-4 p-0" id="toWatch">
+
+        <h2 class="col-12">Watch list</h2>
+
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+
+<script src="javascript/javascript.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+
+</body>
+</html>
