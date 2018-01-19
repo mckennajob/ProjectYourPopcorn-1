@@ -11,11 +11,12 @@
 	border-bottom: 1px solid grey;
 }
 
-#top25 {
+#top20 {
 background-color: lightgrey;
 margin-top: 2%;
 margin-right: 2%;
-height: 600px;
+padding-top: 10px;
+height: 650px;
 border: 1px solid grey;
 float: left;
 }
@@ -66,7 +67,7 @@ float: left;
   background-color: lightgrey;
 	color: white;
   margin-top: 2%;
-  height: 600px;
+  height: 650px;
   border: 1px solid grey;
 	text-align: center;
 }
@@ -86,4 +87,26 @@ h2 {
   margin-left: 50px;
   border: 1px solid grey;
 	text-align: center;
+}
+
+/* added by lissa - will clean up later */
+.movieDB {
+	text-align: center;
+	margin: 20px;
+}
+
+img[id*="browseMovie"] {
+	margin: 5px;
+	border-radius: 5px;
+}
+
+.buttonsArea {
+	position: relative;
+}
+
+#dropdown-genres {
+  position: absolute;
+  top: 100%; /* Bottom of button */
+  right: 0;
+  margin-left: -100px; /* More to the left */
 }
