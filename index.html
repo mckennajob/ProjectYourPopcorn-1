@@ -1,45 +1,76 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Project popcorn</title>
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-  <link rel="stylesheet" href="assets/css/style.css">
+<head>
+    <meta charset="utf-8">
+    <title>Project popcorn</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
   <!-- ==============NAVBAR============== -->
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Popcorn Project</a>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="#"><h1>Popcorn Project</h1></a>
 
-    </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="moviebank.html">My movie bank</a>
+                </li>
+              </ul>
+            <form class="form-inline my-2 my-lg-0">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Log in</button>
+            </form>
+          </div>
+      </nav>
+  </header>
 
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li class="nav-item active">
-          <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="moviebank.html">My movie bank</a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Log in</button>
-      </form>
-    </div>
-  </nav>
-</header>
 
 <div class="container">
   <div class="row">
     <!-- ========TOP 20 MOVIES BY GENRE=========== -->
-    <div class="col-lg-7" id="top25">
-      <div class="header25"></div>
+    <div class="col-lg-7" id="top20">
+      <div class="header20"></div>
 
-        <!-- Buttons area-->
-        <div id="buttonsArea"></div>
-        <!-- End buttons area -->
+        <div class="container">
+          <div class="row">
+
+            <!-- Title of Browse List-->
+            <div class="col-9"><h2>Most Popular</h2></div>
+            <!-- End title of Browse List-->
+
+            <!-- Buttons area-->
+
+            <div class="col-3">
+                <div class="dropdown buttonsArea">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Dropdown button
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdown-genres">
+                  <a class="dropdown-item" href="#" id="genre-0">Action</a>
+                  <a class="dropdown-item" href="#" id="genre-1">Animation</a>
+                  <a class="dropdown-item" href="#" id="genre-2">Comedy</a>
+                  <a class="dropdown-item" href="#" id="genre-3">Documentary</a>
+                  <a class="dropdown-item" href="#" id="genre-4">Drama</a>
+                  <a class="dropdown-item" href="#" id="genre-5">Family</a>
+                  <a class="dropdown-item" href="#" id="genre-6">Horror</a>
+                  <a class="dropdown-item" href="#" id="genre-7">Romance</a>
+                  <a class="dropdown-item" href="#" id="genre-8">SciFi</a>
+                  <a class="dropdown-item" href="#" id="genre-9">Thriller</a>
+                </div>
+                </div>
+              </div>
+              <!-- End buttons area -->
+
+            </div>
+          </div>
+
 
         <div class="container">
           <div class="row">
@@ -48,8 +79,6 @@
 
           </div>
         </div>
-
-
 
     </div>
 
@@ -66,8 +95,11 @@
 
 
 
-
 <script src="assets/javascript/jquery-3.2.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
 <script src="assets/javascript/javascript.js"></script>
 </body>
 </html>
