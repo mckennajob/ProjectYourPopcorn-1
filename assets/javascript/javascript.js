@@ -4,6 +4,9 @@ $(document).ready(function() {
 // *** GLOBAL VARIABLES *** //
 //////////////////////////////
 
+var genreList = ["Thriller", "Horror", "Drama", "Comedy", "Documentary", "Animation", "Sci-fi", "Romance"]
+
+
 var numBrowseMovies = 0; // number of movies on the browse page (left hand side)
 var browseMoviesArray = []; // array of movies to browse from (left hand side)
 
@@ -51,16 +54,17 @@ var movieBank = []; // movies you've watched
   $.ajax({
     url: themoviedbMostPopular,
     method: "GET"
-  }).
-
-  done(function(response){
+  }). done(function(response){
     console.log(response);
     console.log(response.results[5].title);
     showMovies(response);
   })
 
+
+
+
 function showMovies(movieDiv) {
-    var moviesLimit = 10;
+    var moviesLimit = 20;
 
     for (var i = 0; i < moviesLimit; i++) {
         var movieTitle = movieDiv.results[i].title;
@@ -70,20 +74,22 @@ function showMovies(movieDiv) {
         console.log(movieImgURL);
 
         // var movieDiv = $("<div>");
-        var movieImg = $("<img src='https://image.tmdb.org/t/p/w500/" + movieImgURL + "'>");
+        var movieImg = $("<img src='https://image.tmdb.org/t/p/w154/" + movieImgURL + "'>");
+        console.log(movieDiv);
 
-        // movieDiv.append(movieImg);
+        // movieDiv.append(movieImg)
 
-        $("#top25").append(movieImg);
-
-
-        //
+        $(".movieDB").append(movieImg);
+          //
         // var movieDiv = $("<div>");
         // movieDiv.append(movie);
         // $("#top25").append(movieDiv);
 
     }
   }
+
+
+
 
 
 
