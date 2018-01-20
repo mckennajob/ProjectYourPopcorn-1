@@ -1,0 +1,112 @@
+
+.container {
+	width: 100%;
+	max-width:1300px;
+	margin: 0 auto;
+	clear: both;
+	}
+
+.navbar {
+	height: 120px;
+	border-bottom: 1px solid grey;
+}
+
+#top20 {
+background-color: lightgrey;
+margin-top: 2%;
+margin-right: 2%;
+padding-top: 10px;
+height: 650px;
+border: 1px solid grey;
+float: left;
+}
+
+#dropbtnID {
+	background-color: grey;
+}
+
+.dropbtn {
+    background-color: black;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown {
+    float: right;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+#toWatch {
+  background-color: lightgrey;
+	color: white;
+  margin-top: 2%;
+  height: 650px;
+  border: 1px solid grey;
+	text-align: center;
+}
+
+h2 {
+	background-color: grey;
+}
+
+
+/* MOVIE BANK PAGE STYLING */
+
+#myMovieBank {
+  background-color: lightgrey;
+	color: white;
+  margin-top: 2%;
+  height: 600px;
+  margin-left: 50px;
+  border: 1px solid grey;
+	text-align: center;
+}
+
+/* added by lissa - will clean up later */
+.movieDB {
+	text-align: center;
+	margin: 20px;
+}
+
+img[id*="browseMovie"] {
+	margin: 5px;
+	border-radius: 5px;
+}
+
+.buttonsArea {
+	position: relative;
+}
+
+#dropdown-genres {
+  position: absolute;
+  top: 100%; /* Bottom of button */
+  right: 0;
+  margin-left: -100px; /* More to the left */
+}
