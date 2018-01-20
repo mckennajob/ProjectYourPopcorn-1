@@ -8,7 +8,6 @@ var genreList = ["Action", "Animation", "Comedy", "Documentary", "Drama", "Famil
 
 var numWatchList = 0; // number of movies in "what to watch" list (right hand side)
 var watchListArray = []; // array of movies to watch (right hand side)
-
 var movieBank = []; // movies you've watched
 
 
@@ -64,6 +63,7 @@ function showMovies(movieDiv) {
         movieImg.attr("data-title", movieTitle);
         movieImg.attr("data-releasedate", movieReleaseDate);
         movieImg.attr("id", "browseMovie" + i);
+        movieImg.addClass("movieposter");
         movieImg.attr("data-state", "unselected");
 
         $(".movieDB").append(movieImg);
@@ -78,7 +78,9 @@ function showMovies(movieDiv) {
 $("#dropdown-genres a").click(function() {
   event.preventDefault();
   var genre = $(this).attr("data-genre");
+  var genrename = $(this).attr("data-genrename");
   console.log(genre);
+  $("#browse-header").html(genrename);
 
   var themoviedbGenreURL = "https://api.themoviedb.org/3/genre/" + genre + "/movies?" + "api_key=6aef78f9dbb8761ef7757105efd6b161" + "&language=en-US&include_adult=false&sort_by=created_at.asc"
 
@@ -92,29 +94,61 @@ $("#dropdown-genres a").click(function() {
 
   function genreMovies(movieDiv) {
     $(".movieDB").empty(); // empty the top 20 browse movies
-    var genre = "Action";
 
-    $("#browse-header").html(genre);
       var moviesLimit = 20;
-      console.log(movieDiv);
+
+      var htmlString = "";
       for (var i = 0; i < moviesLimit; i++) {
+
+        var layoutArr = [
+          "<ul class='grid cs-style-1'>",
+          "<li>",
+          "<figure>",
+          "#IMAGE",
+          "<figcaption>",
+          "<h3>#TITLE</h3>",
+          "<span></span>",
+          "<a href='http://dribbble.com/shots/1115632-Camera'>Take a look</a>",
+          "</figcaption>",
+          "</figure>",
+          "</li>",
+          "</ul>",
+        ]
+
           var movieTitle = movieDiv.results[i].title;
+          var movieOverview = movieDiv.results[i].overview;
 
           var movieImgURL = movieDiv.results[i].poster_path;
           var movieReleaseDate = movieDiv.results[i].release_date;
 
-          var movieImg = $("<img src='https://image.tmdb.org/t/p/w92/" + movieImgURL + "'>");
-          movieImg.attr("data-title", movieTitle);
-          movieImg.attr("data-releasedate", movieReleaseDate);
-          movieImg.attr("id", "browseMovie" + i);
-          movieImg.attr("data-genre", genre);
-          movieImg.attr("data-state", "unselected");
+          layoutArr[3] = "<img src='https://image.tmdb.org/t/p/w92/" + movieImgURL + "'>";
+          layoutArr[5] = layoutArr[5].replace('#TITLE', movieTitle);
+          layoutArr[6] = layoutArr[6].replace('', movieOverview);
+          var layoutString = layoutArr.join('');
+          htmlString += layoutString;
+          // var movieImg = $();
 
-          console.log(movieImg);
-          $(".movieDB").append(movieImg);
+          // var movieImg = $("<img src='https://image.tmdb.org/t/p/w92/" + movieImgURL + "'>");
+          // movieImg.attr("data-title", movieTitle);
+          // movieImg.attr("data-releasedate", movieReleaseDate);
+          // movieImg.attr("id", "browseMovie" + i);
+          // movieImg.addClass("movieposter");
+          // movieImg.addClass("grid");
+          // movieImg.addClass("cs-style-1");
+          // movieImg.attr("data-genre", genre);
+          // movieImg.attr("data-state", "unselected");
+          //
+          // $(".movieDB").append(movieImg);
       }
+
+      $(".movieDB").html(htmlString);
     };
     });
+
+
+//////////////////////////
+// *** HOVER CARDS *** //
+/////////////////////////
 
 
 
