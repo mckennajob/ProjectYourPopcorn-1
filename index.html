@@ -8,15 +8,17 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
   <!-- ==============NAVBAR============== -->
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">Popcorn Project</a>
-
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <ul class="navbar-nav mr-auto mt-2 mt-sm-0">
           <li class="nav-item active">
             <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
           </li>
@@ -24,7 +26,7 @@
             <a class="nav-link" href="moviebank.html">My movie bank</a>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
+        <form class="form-inline my-2 my-sm-0">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Log in</button>
         </form>
       </div>
@@ -34,10 +36,10 @@
   <div class="container">
     <div class="row">
       <!-- ========TOP 25 MOVIES BY GENRE=========== -->
-      <div class="col-lg-7" id="top25">
-        <div class="header25">
+      <div class="col-sm-7 p-0" id="top25">
+        <div>
           <div class="dropdown">
-            <button class="dropbtn" id="dropbtnID">Genres</button>
+            <button class="dropbtn" id="dropbtnID"><h3>Genres</h3></button>
             <div class="dropdown-content">
               <a href="#">Thriller</a>
               <a href="#">Horror</a>
@@ -53,7 +55,7 @@
       </div>
 
       <!-- =========LAST FIVE MOVIES ADDED TO WATCH LIST========= -->
-      <div class="col-lg-4 p-0" id="toWatch">
+      <div class="col-sm-4 p-0" id="toWatch">
 
         <h2 class="col-12">Watch list</h2>
 
