@@ -64,6 +64,7 @@ function showMovies(movieDiv) {
         movieImg.attr("data-title", movieTitle);
         movieImg.attr("data-releasedate", movieReleaseDate);
         movieImg.attr("id", "browseMovie" + i);
+        movieImg.addClass("movieposter");
         movieImg.attr("data-state", "unselected");
 
         $(".movieDB").append(movieImg);
@@ -107,6 +108,7 @@ $("#dropdown-genres a").click(function() {
           movieImg.attr("data-title", movieTitle);
           movieImg.attr("data-releasedate", movieReleaseDate);
           movieImg.attr("id", "browseMovie" + i);
+          movieImg.addClass("movieposter");
           movieImg.attr("data-genre", genre);
           movieImg.attr("data-state", "unselected");
 
@@ -120,9 +122,19 @@ $("#dropdown-genres a").click(function() {
 
 //////////////////////////
 // *** YOUTUBE API *** //
-/////////////////////////
+////////////////////////
 
-var youtubeAPI = "https://www.googleapis.com/youtube/v3/search?part=snippet&order=relevance&q=jumanji+trailer&key=AIzaSyBMvI37OsXF8l5EcbltKSRLuqq0mp_Nr1A"
+$('body').on('click', '.movieposter', function(){
+  // var title = $('.movieposter').data-title;
+  console.log(this);
+  console.log($(this).attr("data-title"));
+
+
+// var callYouTube = function(){
+var title = $(this).attr("data-title");
+console.log(title);
+
+var youtubeAPI = "https://www.googleapis.com/youtube/v3/search?part=snippet&order=relevance&q=" + title + "official+trailer" + "&key=AIzaSyBMvI37OsXF8l5EcbltKSRLuqq0mp_Nr1A"
 
 $.ajax({
   url: youtubeAPI,
@@ -131,15 +143,27 @@ $.ajax({
 done(function(youTubeResponse){
   console.log(youTubeResponse);
 
-  var jumanjiVideo = youTubeResponse.items[0].id.videoId
-  var jumanjiURL = "https://www.youtube.com/watch?v=" + jumanjiVideo
+  var titleVideo = youTubeResponse.items[0].id.videoId
+  var titleURL = "https://www.youtube.com/watch?v=" + titleVideo
 
-  console.log(jumanjiURL)
+  console.log(titleURL);
+})
+// }
+
 })
 
 /////////////////////////////////
 // *** ON CLICK FUNCTIONS *** //
 ///////////////////////////////
+
+
+
+
+
+
+
+
+
 
 
 ////////////////////
