@@ -6,26 +6,10 @@ $(document).ready(function() {
 
 var genreList = ["Action", "Animation", "Comedy", "Documentary", "Drama", "Family", "Horror", "Romance", "SciFi", "Thriller"]
 
-// var numBrowseMovies = 0; // number of movies on the browse page (left hand side)
-// var browseMoviesArray = []; // array of movies to browse from (left hand side)
-
 var numWatchList = 0; // number of movies in "what to watch" list (right hand side)
 var watchListArray = []; // array of movies to watch (right hand side)
 
 var movieBank = []; // movies you've watched
-
-var genreCodes = { // these integers are needed to pull from the themovieDB API
-  Action: 28,
-  Animation: 16,
-  Comedy: 35,
-  Documentary: 99,
-  Drama: 18,
-  Family: 10751,
-  Horror: 27,
-  Romance: 10749,
-  SciFi: 878,
-  Thriller: 53
-};
 
 
 /////////////////////////////////
@@ -87,204 +71,70 @@ function showMovies(movieDiv) {
   }
 
 
-  /////////////////////////////////////
-  // *** MOVIES FOR EACH GENRE *** // ***THIS IS TOO MUCH CODE; NEED TO FIGURE OUT HOW TO DO IN A FOR LOOP***
   ////////////////////////////////////
+  // *** MOVIES FOR EACH GENRE *** //
+  ///////////////////////////////////
 
-// pull top 20 for each genre based on dropdown selection
+$("#dropdown-genres a").click(function() {
+  event.preventDefault();
+  var genre = $(this).attr("data-genre");
+  console.log(genre);
 
-      // ACTION MOVIES - genre code 28
-      $("#genre-0").click(function() {
-        event.preventDefault();
-        var genre = "28"
-        var themoviedbGenreURL = "https://api.themoviedb.org/3/genre/" + genre + "/movies?" + "api_key=6aef78f9dbb8761ef7757105efd6b161" + "&language=en-US&include_adult=false&sort_by=created_at.asc"
+  var themoviedbGenreURL = "https://api.themoviedb.org/3/genre/" + genre + "/movies?" + "api_key=6aef78f9dbb8761ef7757105efd6b161" + "&language=en-US&include_adult=false&sort_by=created_at.asc"
 
-          $.ajax({
-            url: themoviedbGenreURL,
-            method: "GET"
-          }). done(function(genreResponse){
-            console.log(genreResponse);
-            genreMovies(genreResponse);
-          })
+    $.ajax({
+      url: themoviedbGenreURL,
+      method: "GET"
+    }). done(function(genreResponse){
+      console.log(genreResponse);
+      genreMovies(genreResponse);
+    })
 
-        function genreMovies(movieDiv) {
-          $(".movieDB").empty(); // empty the top 20 browse movies
-          var genre = "Action";
+  function genreMovies(movieDiv) {
+    $(".movieDB").empty(); // empty the top 20 browse movies
+    var genre = "Action";
 
-          $("#browse-header").html(genre);
-            var moviesLimit = 20;
-            console.log(movieDiv);
-            for (var i = 0; i < moviesLimit; i++) {
-                var movieTitle = movieDiv.results[i].title;
-                console.log("Genre Browse List #" + i + ": " + movieTitle);
+    $("#browse-header").html(genre);
+      var moviesLimit = 20;
+      console.log(movieDiv);
+      for (var i = 0; i < moviesLimit; i++) {
+          var movieTitle = movieDiv.results[i].title;
 
-                var movieImgURL = movieDiv.results[i].poster_path;
-                var movieReleaseDate = movieDiv.results[i].release_date;
+          var movieImgURL = movieDiv.results[i].poster_path;
+          var movieReleaseDate = movieDiv.results[i].release_date;
 
-                var movieImg = $("<img src='https://image.tmdb.org/t/p/w92/" + movieImgURL + "'>");
-                movieImg.attr("data-title", movieTitle);
-                movieImg.attr("data-releasedate", movieReleaseDate);
-                movieImg.attr("id", "browseMovie" + i);
-                movieImg.attr("data-genre", genre);
-                movieImg.attr("data-state", "unselected");
+          var movieImg = $("<img src='https://image.tmdb.org/t/p/w92/" + movieImgURL + "'>");
+          movieImg.attr("data-title", movieTitle);
+          movieImg.attr("data-releasedate", movieReleaseDate);
+          movieImg.attr("id", "browseMovie" + i);
+          movieImg.attr("data-genre", genre);
+          movieImg.attr("data-state", "unselected");
 
-                console.log(movieImg);
-                $(".movieDB").append(movieImg);
-            }
-          };
-          });
+          console.log(movieImg);
+          $(".movieDB").append(movieImg);
+      }
+    };
+    });
 
-          // ANIMATION MOVIES - genre code 16
-          $("#genre-1").click(function() {
-            event.preventDefault();
-            var genre = "16"
-
-            var themoviedbGenreURL = "https://api.themoviedb.org/3/genre/" + genre + "/movies?" + "api_key=6aef78f9dbb8761ef7757105efd6b161" + "&language=en-US&include_adult=false&sort_by=created_at.asc"
-
-              $.ajax({
-                url: themoviedbGenreURL,
-                method: "GET"
-              }). done(function(genreResponse){
-                console.log(genreResponse);
-                genreMovies(genreResponse);
-              })
-
-            function genreMovies(movieDiv) {
-              $(".movieDB").empty(); // empty the top 20 browse movies
-              var genre = "Animation";
-
-              $("#browse-header").html(genre);
-
-                var moviesLimit = 20;
-                console.log(movieDiv);
-                for (var i = 0; i < moviesLimit; i++) {
-                    var movieTitle = movieDiv.results[i].title;
-                    console.log("Genre Browse List #" + i + ": " + movieTitle);
-
-                    var movieImgURL = movieDiv.results[i].poster_path;
-                    var movieReleaseDate = movieDiv.results[i].release_date;
-
-                    var movieImg = $("<img src='https://image.tmdb.org/t/p/w92/" + movieImgURL + "'>");
-                    movieImg.attr("data-title", movieTitle);
-                    movieImg.attr("data-releasedate", movieReleaseDate);
-                    movieImg.attr("id", "browseMovie" + i);
-                    movieImg.attr("data-genre", genre);
-                    movieImg.attr("data-state", "unselected");
-
-                    console.log(movieImg);
-                    $(".movieDB").append(movieImg);
-                }
-              };
-              });
-
-              // COMEDY MOVIES - genre code 35
-              $("#genre-2").click(function() {
-                event.preventDefault();
-                var genre = "35"
-                var themoviedbGenreURL = "https://api.themoviedb.org/3/genre/" + genre + "/movies?" + "api_key=6aef78f9dbb8761ef7757105efd6b161" + "&language=en-US&include_adult=false&sort_by=created_at.asc"
-
-                  $.ajax({
-                    url: themoviedbGenreURL,
-                    method: "GET"
-                  }). done(function(genreResponse){
-                    console.log(genreResponse);
-                    genreMovies(genreResponse);
-                  })
-
-                function genreMovies(movieDiv) {
-                  $(".movieDB").empty(); // empty the top 20 browse movies
-                  var genre = "Comedy";
-
-                  $("#browse-header").html(genre);
-
-                    var moviesLimit = 20;
-                    console.log(movieDiv);
-                    for (var i = 0; i < moviesLimit; i++) {
-                        var movieTitle = movieDiv.results[i].title;
-                        console.log("Genre Browse List #" + i + ": " + movieTitle);
-
-                        var movieImgURL = movieDiv.results[i].poster_path;
-                        var movieReleaseDate = movieDiv.results[i].release_date;
-
-                        var movieImg = $("<img src='https://image.tmdb.org/t/p/w92/" + movieImgURL + "'>");
-                        movieImg.attr("data-title", movieTitle);
-                        movieImg.attr("data-releasedate", movieReleaseDate);
-                        movieImg.attr("id", "browseMovie" + i);
-                        movieImg.attr("data-genre", genre);
-                        movieImg.attr("data-state", "unselected");
-
-                        console.log(movieImg);
-                        $(".movieDB").append(movieImg);
-                    }
-                  };
-                  });
-
-                  $("#genre-3").click(function() {
-                    event.preventDefault();
-                    $(".movieDB").empty();
-                    $(".movieDB").text("UNDER CONSTRUCTION!!!");
-                    $("#browse-header").html("Under Construction")
-                  });
-
-                  $("#genre-4").click(function() {
-                    event.preventDefault();
-                    $(".movieDB").empty();
-                    $(".movieDB").text("UNDER CONSTRUCTION!!!");
-                    $("#browse-header").html("Under Construction")
-                  });
-
-
-                  $("#genre-5").click(function() {
-                    event.preventDefault();
-                    $(".movieDB").empty();
-                    $(".movieDB").text("UNDER CONSTRUCTION!!!");
-                    $("#browse-header").html("Under Construction")
-                  });
-
-
-                  $("#genre-6").click(function() {
-                    event.preventDefault();
-                    $(".movieDB").empty();
-                    $(".movieDB").text("UNDER CONSTRUCTION!!!");
-                    $("#browse-header").html("Under Construction")
-                  });
-
-                  $("#genre-7").click(function() {
-                    event.preventDefault();
-                    $(".movieDB").empty();
-                    $(".movieDB").text("UNDER CONSTRUCTION!!!");
-                    $("#browse-header").html("Under Construction")
-                  });
-
-
-                  $("#genre-8").click(function() {
-                    event.preventDefault();
-                    $(".movieDB").empty();
-                    $(".movieDB").text("UNDER CONSTRUCTION!!!");
-                    $("#browse-header").html("Under Construction")
-                  });
-
-
-                  $("#genre-9").click(function() {
-                    event.preventDefault();
-                    $(".movieDB").empty();
-                    $(".movieDB").text("UNDER CONSTRUCTION!!!");
-                    $("#browse-header").html("Under Construction")
-                  });
 
 
 //////////////////////////
 // *** YOUTUBE API *** //
 /////////////////////////
 
-var youtubeAPI = "https://www.googleapis.com/youtube/v3/search?part=john-wick+trailer&key=AIzaSyBMvI37OsXF8l5EcbltKSRLuqq0mp_Nr1A"
+var youtubeAPI = "https://www.googleapis.com/youtube/v3/search?part=snippet&order=relevance&q=jumanji+trailer&key=AIzaSyBMvI37OsXF8l5EcbltKSRLuqq0mp_Nr1A"
 
 $.ajax({
   url: youtubeAPI,
   method: "GET"
-}). done(function(youTubeResponse){
+}).
+done(function(youTubeResponse){
   console.log(youTubeResponse);
-  showMovies(youTubeResponse);
+
+  var jumanjiVideo = youTubeResponse.items[0].id.videoId
+  var jumanjiURL = "https://www.youtube.com/watch?v=" + jumanjiVideo
+
+  console.log(jumanjiURL)
 })
 
 /////////////////////////////////
