@@ -106,7 +106,11 @@ img[id*="browseMovie"] {
 
 #dropdown-genres {
   position: absolute;
-  top: 100%; /* Bottom of button */
+  top: 100%;
   right: 0;
-  margin-left: -100px; /* More to the left */
+  margin-left: -100px;
+}
+
+h3 {
+	display: inline;
 }
