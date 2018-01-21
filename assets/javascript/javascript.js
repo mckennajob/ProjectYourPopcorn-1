@@ -93,7 +93,7 @@ function showMovies(movieDiv) {
             "<figcaption>",
             "<h3>#TITLE</h3>",
             "#OVERVIEW",
-            "<a href=''>View the trailer</a>",
+            "<a href='#' class='youtube-link' data-title='#datatitle'>View the trailer</a>",
             "</figcaption>",
             "</figure>",
             "</li>",
@@ -103,12 +103,16 @@ function showMovies(movieDiv) {
         $(layoutArr[2]).addClass("movieposter");
         layoutArr[4] = layoutArr[4].replace('#TITLE', movieTitle);
         layoutArr[5] = layoutArr[5].replace('#OVERVIEW', "<span class='overview-text'>" + movieOverview + "</span>");
+        layoutArr[6] = layoutArr[6].replace('#datatitle', movieTitle);
         var layoutString = layoutArr.join('');
         htmlString += layoutString;
+        console.log(htmlString);
+
     }
       $(".movieDB").html(listTag + htmlString + listCloseTag);
       // END -- code for showing movies and hovercards
     };
+
 
 
 
@@ -202,16 +206,18 @@ $("#dropdown-genres a").click(function() { // on click function for choosing a g
 // *** YOUTUBE API *** //
 /////////////////////////
 
-$('body').on('click', '.movieposter', function(){
+$('body').on('click', '.youtube-link', function(){
   // $('#player').append.attr('src', '.movieposter')
   // var title = $('.movieposter').data-title;
+  $(".youtube-test").empty();
+
   console.log(this);
-  console.log($(this).attr("data-title"));
+  // console.log($(this).attr("data-title"));
 
 
 // var callYouTube = function(){
 var title = $(this).attr("data-title");
-console.log(title);
+// console.log(title);
 
 var youtubeAPI = "https://www.googleapis.com/youtube/v3/search?part=snippet&order=relevance&q=" + title + "official+trailer" + "&key=AIzaSyBMvI37OsXF8l5EcbltKSRLuqq0mp_Nr1A"
 
@@ -226,10 +232,18 @@ done(function(youTubeResponse){
   var titleURL = "https://www.youtube.com/watch?v=" + titleVideo
 
   console.log(titleURL);
+
+  var embedURL = "https://www.youtube.com/embed/" + titleVideo;
+
+  var testVideo = "<iframe width='560' height='315' src='" + embedURL + "' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>"
+
+  console.log(testVideo);
+  $(".youtube-test").append(testVideo);
 })
 // }
 
 })
+
 
 
 
