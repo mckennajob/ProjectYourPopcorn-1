@@ -121,6 +121,7 @@ $("#dropdown-genres a").click(function() {
           var movieImgURL = movieDiv.results[i].poster_path;
           var movieReleaseDate = movieDiv.results[i].release_date;
 
+
           layoutArr[3] = "<img src='https://image.tmdb.org/t/p/w92/" + movieImgURL + "'>";
           layoutArr[5] = layoutArr[5].replace('#TITLE', movieTitle);
           layoutArr[6] = layoutArr[6].replace('', movieOverview);
@@ -139,6 +140,7 @@ $("#dropdown-genres a").click(function() {
           // movieImg.attr("data-state", "unselected");
           //
           // $(".movieDB").append(movieImg);
+
       }
 
       $(".movieDB").html(htmlString);
@@ -154,9 +156,19 @@ $("#dropdown-genres a").click(function() {
 
 //////////////////////////
 // *** YOUTUBE API *** //
-/////////////////////////
+////////////////////////
 
-var youtubeAPI = "https://www.googleapis.com/youtube/v3/search?part=snippet&order=relevance&q=jumanji+trailer&key=AIzaSyBMvI37OsXF8l5EcbltKSRLuqq0mp_Nr1A"
+$('body').on('click', '.movieposter', function(){
+  // var title = $('.movieposter').data-title;
+  console.log(this);
+  console.log($(this).attr("data-title"));
+
+
+// var callYouTube = function(){
+var title = $(this).attr("data-title");
+console.log(title);
+
+var youtubeAPI = "https://www.googleapis.com/youtube/v3/search?part=snippet&order=relevance&q=" + title + "official+trailer" + "&key=AIzaSyBMvI37OsXF8l5EcbltKSRLuqq0mp_Nr1A"
 
 $.ajax({
   url: youtubeAPI,
@@ -165,15 +177,27 @@ $.ajax({
 done(function(youTubeResponse){
   console.log(youTubeResponse);
 
-  var jumanjiVideo = youTubeResponse.items[0].id.videoId
-  var jumanjiURL = "https://www.youtube.com/watch?v=" + jumanjiVideo
+  var titleVideo = youTubeResponse.items[0].id.videoId
+  var titleURL = "https://www.youtube.com/watch?v=" + titleVideo
 
-  console.log(jumanjiURL)
+  console.log(titleURL);
+})
+// }
+
 })
 
 /////////////////////////////////
 // *** ON CLICK FUNCTIONS *** //
 ///////////////////////////////
+
+
+
+
+
+
+
+
+
 
 
 ////////////////////
