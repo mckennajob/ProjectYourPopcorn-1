@@ -93,7 +93,7 @@ function showMovies(movieDiv) {
             "<figcaption>",
             "<h3>#TITLE</h3>",
             "#OVERVIEW",
-            "<a href='#' class='youtube-link' data-title='#datatitle'>View the trailer</a>",
+            "<button type='button' class='btn btn-primary youtube-link' data-toggle='modal' data-target='#exampleModalCenter' data-title='#datatitle'>View the trailer</button>",
             "</figcaption>",
             "</figure>",
             "</li>",
@@ -182,7 +182,7 @@ $("#dropdown-genres a").click(function() { // on click function for choosing a g
               "<figcaption>",
               "<h3>#TITLE</h3>",
               "#OVERVIEW",
-              "<a href=''>View the trailer</a>",
+              "<button type='button' class='btn btn-primary youtube-link' data-toggle='modal' data-target='#exampleModalCenter' data-title='#datatitle'>View the trailer</button>",
               "</figcaption>",
               "</figure>",
               "</li>",
@@ -192,6 +192,7 @@ $("#dropdown-genres a").click(function() { // on click function for choosing a g
           $(layoutArr[2]).addClass("movieposter");
           layoutArr[4] = layoutArr[4].replace('#TITLE', movieTitle);
           layoutArr[5] = layoutArr[5].replace('#OVERVIEW', "<span class='overview-text'>" + movieOverview + "</span>");
+          layoutArr[6] = layoutArr[6].replace('#datatitle', movieTitle);
           var layoutString = layoutArr.join('');
           htmlString += layoutString;
       }
@@ -205,6 +206,8 @@ $("#dropdown-genres a").click(function() { // on click function for choosing a g
 //////////////////////////
 // *** YOUTUBE API *** //
 /////////////////////////
+
+
 
 $('body').on('click', '.youtube-link', function(){
   // $('#player').append.attr('src', '.movieposter')
@@ -237,10 +240,10 @@ done(function(youTubeResponse){
 
   var testVideo = "<iframe width='560' height='315' src='" + embedURL + "' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>"
 
+  // var watchTrailer = "<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"></button>"
+
   console.log(testVideo);
   $(".youtube-test").append(testVideo);
-$(".aria-hidden").attr("aria-hidden", true);
-
 
 })
 // }
@@ -252,6 +255,7 @@ $(".aria-hidden").attr("aria-hidden", true);
 ///////////////////////////
 // *** GUIDEBOX API *** //
 //////////////////////////
+
 
 
 
