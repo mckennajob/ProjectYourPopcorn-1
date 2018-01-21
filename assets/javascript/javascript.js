@@ -246,8 +246,11 @@ done(function(youTubeResponse){
 
 
 
+///////////////////////////
+// *** GUIDEBOX API *** //
+//////////////////////////
 
-//Pass the titleURL to the iFrame
+
 
 
 
