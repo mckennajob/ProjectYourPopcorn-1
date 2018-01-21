@@ -2,35 +2,123 @@
 <html>
 
 <head>
+
     <meta charset="utf-8">
     <title>Project popcorn</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/default.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/component.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+  <meta charset="utf-8">
+  <title>Project popcorn</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/style.css">
+
 </head>
 
 <body>
   <!-- ==============NAVBAR============== -->
   <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="#"><h1>Popcorn Project</h1></a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="index.html"><h1 class="popTitle">Popcorn Project</h1></a>
 
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="moviebank.html">My movie bank</a>
-                </li>
-              </ul>
-            <form class="form-inline my-2 my-lg-0">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Log in</button>
-            </form>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-sm-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="moviebank.html">My <br>Movie <br>Bank</a>
+          </li>
+        </ul>
+
+
+
+
+<!-- Button trigger modal -->
+        <button id="btnLogin" type="button" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#login-modal">
+          Log In
+        </button>
+
+        <!-- Log In Modal -->
+        <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Log In</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input id="userEmail" type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">Welcome back!</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input id="userPassword" type="password" class="form-control" placeholder="Password">
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Log In</button>
+              </div>
+            </div>
           </div>
-      </nav>
-  </header>
+        </div>
+
+
+
+<!-- BUTTON TRIGGER-->
+        <button id="btnRegister" type="button" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#register-modal">
+          Register
+        </button>
+        <!-- Register Modal -->
+
+        <div class="modal fade" id="register-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Register</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input id="userEmail" type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input id="userPassword" type="password" class="form-control" placeholder="Password">
+                  </div>
+
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button id="RegisterButton" type="submit" class="btn btn-primary">Register</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+      </form>
+    </div>
+  </nav>
+</header>
+
 
 
   <!-- Button trigger modal -->
@@ -58,22 +146,24 @@
 
 <div class="container">
   <div class="row">
+
+
+
     <!-- ========TOP 20 MOVIES BY GENRE=========== -->
-    <div class="col-lg-7" id="top20">
-      <div class="header20"></div>
+    <div class="col-sm-7" id="top20">
+      <!-- <div class="header20"></div> -->
 
-        <div class="container">
-          <div class="row">
+      <div class="container">
+        <div class="row top-menu">
 
-            <!-- Title of Browse List-->
-            <div class="col-9"><h2 id="browse-header">Most Popular</h2></div>
-            <!-- End title of Browse List-->
-
-            <!-- Buttons area-->
-
-            <div class="col-3">
-                <div class="dropdown buttonsArea">
+          <!-- Title of Browse List-->
+          <div class="col-12 p-0">
+            <div class="row" id="title-container">
+            <h2 id="browse-header" class="col-9">Most Popular</h2>
+            <div class="col-3" id="dropdown-container">
+              <div class="dropdown buttonsArea">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
                   Select a Genre
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdown-genres">
@@ -91,30 +181,60 @@
 
 
                 </div>
+
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdown-genres">
+                  <a class="dropdown-item" href="#" id="genre-0" data-genre="28">Action</a>
+                  <a class="dropdown-item" href="#" id="genre-1" data-genre="16">Animation</a>
+                  <a class="dropdown-item" href="#" id="genre-2" data-genre="35">Comedy</a>
+                  <a class="dropdown-item" href="#" id="genre-3" data-genre="99">Documentary</a>
+                  <a class="dropdown-item" href="#" id="genre-4" data-genre="18">Drama</a>
+                  <a class="dropdown-item" href="#" id="genre-5" data-genre="10751">Family</a>
+                  <a class="dropdown-item" href="#" id="genre-6" data-genre="27">Horror</a>
+                  <a class="dropdown-item" href="#" id="genre-7" data-genre="10749">Romance</a>
+                  <a class="dropdown-item" href="#" id="genre-8" data-genre="878">SciFi</a>
+                  <a class="dropdown-item" href="#" id="genre-9" data-genre="53">Thriller</a>
+
+
                 </div>
               </div>
-              <!-- End buttons area -->
-
             </div>
           </div>
-
-
-        <div class="container">
-          <div class="row">
-
-              <div class="movieDB"></div>
-
           </div>
+          <!-- End title of Browse List-->
+
+
+          <!-- Buttons area-->
+
+          <!-- End buttons area -->
+
         </div>
+      </div>
+
+
+      <div class="container">
+        <div class="row">
+
+          <div class="movieDB"></div>
+
+
+          <!-- Buttons area-->
+
+          <!-- End buttons area -->
+
+        </div>
+      </div>
+
+
 
     </div>
 
 
 
     <!-- =========LAST FIVE MOVIES ADDED TO WATCH LIST========= -->
-    <div class="col-lg-4 p-0" id="toWatch">
+    <div class="col-sm-4 p-0" id="toWatch">
 
-      <h2 class="col-12">Watch list</h2>
+      <h2 class="col-12" id="watch">Watch list</h2>
 
     </div>
 

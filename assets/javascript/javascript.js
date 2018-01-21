@@ -245,9 +245,6 @@ done(function(youTubeResponse){
   console.log(testVideo);
   $(".youtube-test").append(testVideo);
 
-
-
-  // $(".watchTrailer").append(watchTrailer);
 })
 // }
 
@@ -255,15 +252,12 @@ done(function(youTubeResponse){
 
 
 
+///////////////////////////
+// *** GUIDEBOX API *** //
+//////////////////////////
 
 
 
-
-
-
-
-
-//Pass the titleURL to the iFrame
 
 
 
