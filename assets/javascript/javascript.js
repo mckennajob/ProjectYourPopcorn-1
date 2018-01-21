@@ -239,6 +239,9 @@ done(function(youTubeResponse){
 
   console.log(testVideo);
   $(".youtube-test").append(testVideo);
+$(".aria-hidden").attr("aria-hidden", true);
+
+
 })
 // }
 
