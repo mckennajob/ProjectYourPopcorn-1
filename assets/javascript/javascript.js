@@ -93,7 +93,7 @@ function showMovies(movieDiv) {
             "<figcaption>",
             "<h3>#TITLE</h3>",
             "#OVERVIEW",
-            "<button type='button' class='btn btn-primary youtube-link' data-toggle='modal' data-target='#exampleModalCenter' data-title='#datatitle'>View the trailer</button>",
+            "<button type='button' class='btn btn-primary youtube-link' data-toggle='modal' data-target='#myModal' data-title='#datatitle'>View the trailer</button>",
             "</figcaption>",
             "</figure>",
             "</li>",
@@ -182,17 +182,17 @@ $("#dropdown-genres a").click(function() { // on click function for choosing a g
               "<figcaption>",
               "<h3>#TITLE</h3>",
               "#OVERVIEW",
-              "<button type='button' class='btn btn-primary youtube-link' data-toggle='modal' data-target='#exampleModalCenter' data-title='#datatitle'>View the trailer</button>",
+              "<button type='button' class='btn btn-info btn-lg' data-toggle='modal' data-target='#myModal' data-title='#datatitle'>View the trailer</button>",
               "</figcaption>",
               "</figure>",
               "</li>",
             ]
 
+
           layoutArr[2] = "<img src='https://image.tmdb.org/t/p/w92/" + movieImgURL + "' data-title='" + movieTitle + "' data-releasedate='" + movieReleaseDate + "' id='browseMovie" + i + "' data-state='unselected' class='movieposter'>";
           $(layoutArr[2]).addClass("movieposter");
           layoutArr[4] = layoutArr[4].replace('#TITLE', movieTitle);
           layoutArr[5] = layoutArr[5].replace('#OVERVIEW', "<span class='overview-text'>" + movieOverview + "</span>");
-          layoutArr[6] = layoutArr[6].replace('#datatitle', movieTitle);
           var layoutString = layoutArr.join('');
           htmlString += layoutString;
       }
@@ -240,7 +240,7 @@ done(function(youTubeResponse){
 
   var testVideo = "<iframe width='560' height='315' src='" + embedURL + "' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>"
 
-  // var watchTrailer = "<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"></button>"
+  // var watchTrailer = "<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"></button>"
 
   console.log(testVideo);
   $(".youtube-test").append(testVideo);

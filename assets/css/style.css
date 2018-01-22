@@ -97,35 +97,9 @@
     background-color: #3e8e41;
 }
 
-#btnLogin {
-	margin: 20px;
-	color: darkred;
-	border-color: darkred;
-}
 
-#btnRegister {
-	margin: 20px;
-	margin-right: 60px;
-	color: darkred;
-	border-color: darkred;
-}
 
-#btnLogin1 {
-	margin: 20px;
-	color: darkred;
-	border-color: darkred;
-}
 
-#btnRegister1 {
-	margin: 20px;
-	margin-right: 60px;
-	color: darkred;
-	border-color: darkred;
-}
-
-/*#logInButton #regButton {
-	margin-left: 10px;
-}*/
 
 #toWatch {
   background-color: lightgrey;
@@ -178,3 +152,14 @@ img[id*="browseMovie"] {
 h3 {
 	display: inline;
 }
+
+.modal-body {
+	height: 525px;
+	text-align: center;
+	background: url("https://github.com/lilmocc/ProjectYourPopcorn/blob/Joe1/assets/images/800px_COLOURBOX11019817.jpg?raw=true");
+	border: 1px solid #580000;
+}
+
+/* .modal-dialog {
+	width: 400px;
+} */
