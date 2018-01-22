@@ -63,6 +63,10 @@ float: left;
     background-color: #3e8e41;
 }
 
+
+
+
+
 #toWatch {
   background-color: lightgrey;
 	color: white;
@@ -114,3 +118,13 @@ img[id*="browseMovie"] {
 h3 {
 	display: inline;
 }
+
+#youTubeID {
+	height: 700px;
+	text-align: center;
+	/* margin-left: 100px; */
+}
+
+/* .modal-dialog {
+	width: 400px;
+} */
