@@ -109,6 +109,7 @@ body {
 }*/
 
 .dropdown {
+		margin-top: 10%;
     float: right;
 }
 
@@ -172,6 +173,17 @@ img[id*="browseMovie"] {
 	border-radius: 5px;
 }
 
+#browse-header {
+	font-size: 30px;
+	text-align: center;
+	padding: 2%;
+	padding-left: 25%;
+
+}
+
+
+
+
 .buttonsArea {
 	position: relative;
 	margin-top: -25px;
@@ -180,7 +192,22 @@ img[id*="browseMovie"] {
 
 #dropdown-genres {
   position: absolute;
-  top: 100%; /* Bottom of button */
+  top: 100%;
   right: 0;
-  margin-left: -100px; /* More to the left */
+  margin-left: -100px;
 }
+
+h3 {
+	display: inline;
+}
+
+.modal-body {
+	height: 525px;
+	text-align: center;
+	background: url("https://github.com/lilmocc/ProjectYourPopcorn/blob/Joe1/assets/images/800px_COLOURBOX11019817.jpg?raw=true");
+	border: 1px solid #580000;
+}
+
+/* .modal-dialog {
+	width: 400px;
+} */

@@ -2,6 +2,14 @@
 <html>
 
 <head>
+
+    <meta charset="utf-8">
+    <title>Project popcorn</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/default.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/component.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
   <meta charset="utf-8">
   <title>Project popcorn</title>
 
@@ -25,16 +33,26 @@
             <a id="mmb1" class="nav-link" href="moviebank.html">My Movie Bank</a>
           </li>
         </ul>
-
-
-
-
-
-      </form>
     </div>
   </nav>
 </header>
 
+
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="youtube-test" id="youTubeID"></div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <div class="container">
@@ -56,7 +74,25 @@
             <div class="col-2" id="dropdown-container">
               <div id="ddb" class="dropdown buttonsArea">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Genres
+
+                  Select a Genre
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdown-genres">
+
+                  <a class="dropdown-item" href="#" data-genrename="Action" data-genre="28">Action</a>
+                  <a class="dropdown-item" href="#" data-genrename="Animation" data-genre="16">Animation</a>
+                  <a class="dropdown-item" href="#" data-genrename="Comedy" data-genre="35">Comedy</a>
+                  <a class="dropdown-item" href="#" data-genrename="Documentary" data-genre="99">Documentary</a>
+                    ``<a class="dropdown-item" href="#" data-genrename="Drama" data-genre="18">Drama</a>
+                  <a class="dropdown-item" href="#" data-genrename="Family" data-genre="10751">Family</a>
+                  <a class="dropdown-item" href="#" data-genrename="Horror" data-genre="27">Horror</a>
+                  <a class="dropdown-item" href="#" data-genrename="Romance" data-genre="10749">Romance</a>
+                  <a class="dropdown-item" href="#" data-genrename="SciFi" data-genre="878">SciFi</a>
+                  <a class="dropdown-item" href="#" data-genrename="Thriller" data-genre="53">Thriller</a>
+
+
+                </div>
+
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdown-genres">
                   <a class="dropdown-item" href="#" id="genre-0" data-genre="28">Action</a>
@@ -70,12 +106,14 @@
                   <a class="dropdown-item" href="#" id="genre-8" data-genre="878">SciFi</a>
                   <a class="dropdown-item" href="#" id="genre-9" data-genre="53">Thriller</a>
 
+
                 </div>
               </div>
             </div>
           </div>
           </div>
           <!-- End title of Browse List-->
+
 
           <!-- Buttons area-->
 
@@ -90,10 +128,19 @@
 
           <div class="movieDB"></div>
 
+
+          <!-- Buttons area-->
+
+          <!-- End buttons area -->
+
         </div>
       </div>
 
+
+
     </div>
+
+
 
     <!-- =========LAST FIVE MOVIES ADDED TO WATCH LIST========= -->
     <div class="col-sm-4 p-0" id="toWatch">
@@ -108,12 +155,15 @@
 
 
 
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed" + vteTamP8hmM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+
+
 <script src="assets/javascript/jquery-3.2.1.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
-
-
+<script src="assets/javascript/modernizr.custom.js"></script>
 <script src="assets/javascript/javascript.js"></script>
+
 </body>
 </html>
