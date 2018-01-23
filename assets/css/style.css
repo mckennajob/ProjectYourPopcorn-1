@@ -40,15 +40,13 @@
 
 #watch {
 	background: darkred;
-	padding: 1%;
-	font-size: 50px;
 }
 
 #top20 {
 	background-color: lightgrey;
 	margin-top: 2%;
 	margin-right: 2%;
-	/* border: 1px solid darkred; */
+	border: 1px solid darkred;
 	float: left;
 	color: white;
 	padding: 0;
@@ -109,9 +107,8 @@
 	color: white;
   margin-top: 2%;
   height: 650px;
-  /* border: 1px solid darkred; */
+  border: 1px solid darkred;
 	text-align: center;
-	font-family: 'Bangers', cursive;
 }
 
 /*h2 {
@@ -147,7 +144,7 @@ img[id*="browseMovie"] {
 	text-align: center;
 	padding: 2%;
 	padding-left: 25%;
-	font-family: 'Fontdiner Swanky', cursive;
+
 }
 
 
@@ -174,24 +171,6 @@ h3 {
 	background: url("https://github.com/lilmocc/ProjectYourPopcorn/blob/Joe1/assets/images/800px_COLOURBOX11019817.jpg?raw=true");
 	border: 1px solid #580000;
 }
-
-@media (max-width: 994px){
-
-	div.modal-dialog.modal-lg{
-		margin: 0;
-	}
-	div.modal-body {
-		width: 100vw;
-	}
-}
-
-@media (max-width: 600px){
-	iframe {
-		width: 100vw;
-	}
-
-}
-
 
 /* .modal-dialog {
 	width: 400px;
